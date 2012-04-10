@@ -3,11 +3,7 @@ package com.creadri.lazyroad;
 import com.creadri.util.ColumnChat;
 import com.creadri.util.FileManager;
 import com.creadri.util.Messages;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FilenameFilter;
-import java.io.IOException;
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,8 +13,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.PluginManager;
+import org.bukkit.plugin.java.JavaPlugin;
 
 /**
  * @author creadri some updates buy VeraLapsa
@@ -59,7 +55,7 @@ public class LazyRoad extends JavaPlugin {
             pillarsDirectory = new File(getDataFolder(), "pillars");
 
             if (!roadsDirectory.exists() || !pillarsDirectory.exists()) {
-                FileManager.copyDefaultRessources(getDataFolder(), "/", "defaultRoads.zip", "defaultPillars.zip");
+                FileManager.copyDefaultRessources(getDataFolder(), "", "defaultRoads.zip", "defaultPillars.zip");
             }
 
             // load roads and pillars
